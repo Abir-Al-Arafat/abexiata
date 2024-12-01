@@ -5,20 +5,7 @@ const dotenv = require("dotenv");
 const path = require("path");
 
 const databaseConnection = require("./config/database");
-const UserRouter = require("./routes/user.route");
-const AuthRouter = require("./routes/auth.route");
-const ChatRouter = require("./routes/chat.route");
 
-const PaymentRouter = require("./routes/payment.route");
-const ReviewRouter = require("./routes/review.route");
-const ratingRouter = require("./routes/rating.route");
-const termsOfServiceRouter = require("./routes/termsOfService.route");
-const faqRouter = require("./routes/faq.route");
-const categoryRouter = require("./routes/category.route");
-const propertyRouter = require("./routes/property.route");
-const reservationRouter = require("./routes/reservation.route");
-const contentRouter = require("./routes/content.route");
-const blogRouter = require("./routes/blog.route");
 const professionalsRouter = require("./routes/professional.route");
 
 const app = express();
@@ -52,21 +39,6 @@ app.use(status());
 
 app.use("/public", express.static(path.join(__dirname, "public")));
 
-app.use("/users", UserRouter);
-app.use("/users", AuthRouter);
-app.use("/auth", AuthRouter);
-app.use("/property", propertyRouter);
-app.use("/reservation", reservationRouter);
-
-app.use("/payment", PaymentRouter);
-app.use("/category", categoryRouter);
-app.use("/chats", ChatRouter);
-app.use("/review", ReviewRouter);
-app.use("/rating", ratingRouter);
-app.use("/terms-of-service", termsOfServiceRouter);
-app.use("/faq", faqRouter);
-app.use("/content", contentRouter);
-app.use("/blog", blogRouter);
 app.use("/abexita", professionalsRouter);
 
 // Route to handle all other invalid requests
