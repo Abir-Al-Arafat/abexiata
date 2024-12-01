@@ -1,4 +1,3 @@
-const status = require("express-status-monitor");
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -34,8 +33,6 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = 4001;
-
-app.use(status());
 
 app.use("/public", express.static(path.join(__dirname, "public")));
 
